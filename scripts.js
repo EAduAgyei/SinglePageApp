@@ -20,6 +20,7 @@ function renderSignUp(){
 
 }
 
+renderSignUp();
 
 let userName = '';
 
