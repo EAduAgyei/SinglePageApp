@@ -5,13 +5,13 @@ function renderSignUp(){
     rootDiv.innerHTML =
     `
     <h1>Sign Up</h1>
-    <form id = "signupForm">
+    <form id="signupForm">
         <label for="name">Name: </label>
-        <input type="text" id="name" placeholder="Enter your name"><br></br></input>
+        <input type="text" id="name" placeholder="Enter your name"><br>
         <label for="email">Email: </label>
-        <input type="email" id="email" placeholder="Enter your email"><br></br></input>
+        <input type="email" id="email" placeholder="Enter your email"><br>
         <label for="passsword">Password: </label>
-        <input type="password" id="password" placeholder="Enter your password"><br></br></input>
+        <input type="password" id="password" placeholder="Enter your password"><br>
         <button type="button" onclick="handleSignUp()">Sign Up</button>
         
     </form>
@@ -36,14 +36,14 @@ function handleSignUp(){
 }
 
 function renderHomePage(){
-    rootDiv.innerHTML ='
-        <h1>Welcome, $(userName)!</h1>
+    rootDiv.innerHTML = `
+        <h1>Welcome, ${userName}!</h1>
         <h2>Create a Post</h2>
         <textarea id="postContent" placeholder="What's on your mind?"></textarea><br></br>
         <button type="button" onclick="handleCreatePost()">Post</button>
         <h3>Your Posts</h3>
         <ul id="postList"></ul>
-    ';
+    `;
 }
 
 let posts = [];
@@ -59,13 +59,12 @@ function handleCreatePost(){
 }
 
 function renderPostList(){
-cost postListElement = document.getElementById('postList');
-postListElement.innerHTML = '';
+    const postListElement = document.getElementById('postList');
+    postListElement.innerHTML = '';
 
-post.forEach((post) => {
-    const postItem = document.createElement('li');
-    postItem.textContent = post;
-    postListElement.appendChild(postItem);
+    posts.forEach((post) => {
+        const postItem = document.createElement('li');
+        postItem.textContent = post;
+        postListElement.appendChild(postItem);
     });
 }
-    
